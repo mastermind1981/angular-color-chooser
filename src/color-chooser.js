@@ -52,11 +52,12 @@
   .directive('lkColorChooser', ['lkColorSettings', '$timeout', function (lkColorSettings, $timeout) {
     return {
       restrict: 'EA',
-      template: '<ul class="lk-color-chooser"><lk-color ng-repeat="color in colors track by $index" color="color" ng-class="{\'selected\': selectedColor == color}"></lk-color></ul>',
+      template: '<ul class="lk-color-chooser"><lk-color  ng-repeat-start="color in colors track by $index" color="color" color-row="colorRow" idx="$index" ng-class="{\'selected\': selectedColor == color}"></lk-color><br ng-if="($index + 1) % colorsPerRow == 0" ng-repeat-end></ul>',
       replace: true,
       scope: {
         colors: '=?',
-        selectedColor: '='
+        selectedColor: '=',
+        colorsPerRow: '='
       },
       controller: ['$scope', '$timeout', function lkColorChooserCtrl ($scope, $timeout) {
         this.setSelectedColor = function (color) {
@@ -77,10 +78,13 @@
     return {
       restrict: 'EA',
       require: '^lkColorChooser',
-      template: '<li class="lk-color-chooser__color" style="background-color: {{ color }}">&nbsp;</li>',
-      replace: true,
+      template: '<li class="lk-color-chooser__color" style="background-color: {{ color }}">&nbsp;</li>   ',
+      replace: false,
       scope: {
-        color: '='
+        color: '=',
+        colorRow: '=',
+        idx: '='
+
       },
       link: function (scope, element, attrs, lkColorChooserCtrl) {
         element.on('click', function () {
