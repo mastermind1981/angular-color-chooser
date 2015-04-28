@@ -9,6 +9,9 @@ Unfortunately, allowing your end users to choose any color they want to, can lea
 **Requirements:** AngularJS 1.3+
 **File Size:** 0.98 kb minified
 
+#Demo
+[plnkr](http://plnkr.co/edit/QJUDy4Dm2XWpSVhYvlP0?p=preview)
+
 # Installation
 
 1. Using Bower (recommended)
