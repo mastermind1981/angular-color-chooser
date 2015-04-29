@@ -10,7 +10,7 @@ Unfortunately, allowing your end users to choose any color they want to, can lea
 **File Size:** 0.98 kb minified
 
 #Demo
-[plnkr](http://plnkr.co/edit/QJUDy4Dm2XWpSVhYvlP0?p=preview)
+[plnkr](http://plnkr.co/edit/iEr1yYSPSvwKNOu2lQuC?p=preview)
 
 # Installation
 
